@@ -1,0 +1,15 @@
+# 1. Starta med en officiell JDK-bild
+FROM openjdk:17-jdk-slim
+
+# 2. Ange arbetskatalogen i containern
+WORKDIR /app
+
+# 3. Kopiera den byggda JAR-filen till containern
+# Anta att din byggda Spring Boot JAR-fil finns i samma mapp som denna Dockerfile
+COPY target/backend-bookning-0.0.1-SNAPSHOT.jar app.jar
+
+# 4. Exponera port 8080
+EXPOSE 8080
+
+# 5. Kör applikationen
+ENTRYPOINT ["java", "-jar", "app.jar"]
