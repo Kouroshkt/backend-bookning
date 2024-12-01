@@ -1,2 +1,0 @@
-package org.iths.bookning;public interface UserRepository {
-}
