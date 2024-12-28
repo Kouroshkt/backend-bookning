@@ -1,4 +1,4 @@
-package org.iths.bookning;
+package org.iths.bookning.user;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

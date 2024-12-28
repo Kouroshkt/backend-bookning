@@ -1,4 +1,4 @@
-package org.iths.bookning;
+package org.iths.bookning.user;
 
 import org.springframework.stereotype.Service;
 
