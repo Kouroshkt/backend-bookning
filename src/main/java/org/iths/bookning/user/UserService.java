@@ -10,19 +10,19 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public void addUser(UserInform userInform) {
-        userRepository.save(userInform);
+    public void addUser(UserInformation userInformation) {
+        userRepository.save(userInformation);
     }
 
-    public Iterable<UserInform> allUser() {
+    public Iterable<UserInformation> allUser() {
         return userRepository.findAll();
     }
 
-    public UserInform getUserByEmail(String email) {
+    public UserInformation getUserByEmail(String email) {
         return userRepository.findByEmail(email);
     }
 
-    public UserInform getUserByUsername(String username) {
+    public UserInformation getUserByUsername(String username) {
         return userRepository.findByUsername(username);
     }
 }

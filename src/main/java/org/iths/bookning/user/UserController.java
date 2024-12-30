@@ -14,18 +14,18 @@ public class UserController {
     }
 
     @GetMapping("/getall")
-    public Iterable<UserInform> allUser() {
+    public Iterable<UserInformation> allUser() {
         return userService.allUser();
     }
     @PostMapping("/adduser")
-    public void addUser(@RequestBody UserInform userInform) {
-        System.out.println(userInform);
-        userService.addUser(userInform);
+    public void addUser(@RequestBody UserInformation userInformation) {
+        System.out.println(userInformation);
+        userService.addUser(userInformation);
     }
     @PostMapping("/login")
-    public ResponseEntity<UserInform> login(@RequestBody UserInform userInform) {
-        UserInform userLogin = userService.getUserByUsername(userInform.getUsername());
-        if (userLogin != null && userLogin.getPassword().equals(userInform.getPassword())) {
+    public ResponseEntity<UserInformation> login(@RequestBody UserInformation userInformation) {
+        UserInformation userLogin = userService.getUserByUsername(userInformation.getUsername());
+        if (userLogin != null && userLogin.getPassword().equals(userInformation.getPassword())) {
             return ResponseEntity.ok(userLogin);
         } else {
             return ResponseEntity.status(401).build();
@@ -33,7 +33,7 @@ public class UserController {
     }
 
     @GetMapping("/getuser/{email}")
-    public UserInform getUserByEmail(@PathVariable String email){
+    public UserInformation getUserByEmail(@PathVariable String email){
         return userService.getUserByEmail(email);
     }
 
