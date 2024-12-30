@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface CategoryRepository extends CrudRepository<CarCategory, Long> {
 
+    Iterable<CarCategory> findByCityId(Long cityId);
 }

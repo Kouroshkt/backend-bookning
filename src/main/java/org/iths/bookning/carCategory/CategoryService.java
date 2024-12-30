@@ -13,4 +13,8 @@ public class CategoryService {
     public Iterable<CarCategory> allCategory() {
         return categoryRepository.findAll();
     }
+
+    public Iterable<CarCategory> getCategoriesByCityId(Long cityId) {
+        return categoryRepository.findByCityId(cityId);
+    }
 }

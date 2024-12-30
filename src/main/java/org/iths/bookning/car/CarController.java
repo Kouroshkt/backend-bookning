@@ -1,8 +1,7 @@
 package org.iths.bookning.car;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/car")
@@ -12,5 +11,19 @@ public class CarController {
 
     public CarController(CarService carService) {
         this.carService = carService;
+    }
+
+    @GetMapping("/getall")
+    public Iterable<Car> allCar() {
+        return carService.allCar();
+    }
+
+    @GetMapping("/getcar")
+    public Iterable<Car> getCar(@RequestParam Long cityId, @RequestParam Long carCategoryId) {
+        return carService.getCar(cityId, carCategoryId);
+    }
+    @GetMapping("/getallcar")
+    public Iterable<Car> getAllCar() {
+        return carService.allCar();
     }
 }
