@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.iths.bookning.carCategory.CarCategory;
+import org.iths.bookning.city.City;
 
 @Entity
 @Data
@@ -14,11 +15,27 @@ public class Car {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(nullable = false)
     private String brand;
+
+    @Column(nullable = false)
     private String model;
+
+    @Column(nullable = false)
     private String color;
+
+    @Column(nullable = false)
     private int seats;
+
+    @Column(nullable = false)
+    private String image;
+
     @ManyToOne
-    @JoinColumn(name = "car_category_id")
+    @JoinColumn(name = "car_category_id", nullable = false) // Koppling till CarCategory
     private CarCategory carCategory;
+
+    @ManyToOne
+    @JoinColumn(name = "city_id", nullable = false) // Koppling till City
+    private City city;
 }
