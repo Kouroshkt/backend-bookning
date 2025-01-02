@@ -1,20 +1,24 @@
-package org.iths.bookning.city;
+package org.iths.bookning.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class City {
+public class CarCategory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private String categoryName;
+    private String description;
+    private String categoryImage;
 
-    @Column(nullable = false, unique = true) // Validering för namn
-    private String cityName;
-
+    @ManyToOne
+    @JoinColumn(name = "city_id")
+    private City city;
 }

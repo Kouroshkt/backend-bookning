@@ -1,5 +1,7 @@
-package org.iths.bookning.user;
+package org.iths.bookning.controller;
 
+import org.iths.bookning.entities.UserInformation;
+import org.iths.bookning.services.UserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

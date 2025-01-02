@@ -1,5 +1,7 @@
-package org.iths.bookning.carCategory;
+package org.iths.bookning.controller;
 
+import org.iths.bookning.entities.CarCategory;
+import org.iths.bookning.services.CategoryService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

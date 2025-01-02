@@ -1,5 +1,7 @@
-package org.iths.bookning.city;
+package org.iths.bookning.controller;
 
+import org.iths.bookning.entities.City;
+import org.iths.bookning.services.CityService;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

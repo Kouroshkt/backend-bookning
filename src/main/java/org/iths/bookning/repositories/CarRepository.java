@@ -1,6 +1,6 @@
-package org.iths.bookning.car;
+package org.iths.bookning.repositories;
 
-import org.springframework.data.jpa.repository.Query;
+import org.iths.bookning.entities.Car;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

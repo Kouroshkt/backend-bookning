@@ -1,5 +1,7 @@
-package org.iths.bookning.user;
+package org.iths.bookning.services;
 
+import org.iths.bookning.entities.UserInformation;
+import org.iths.bookning.repositories.UserRepository;
 import org.springframework.stereotype.Service;
 
 @Service

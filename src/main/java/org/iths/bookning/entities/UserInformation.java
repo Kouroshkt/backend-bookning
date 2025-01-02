@@ -1,4 +1,4 @@
-package org.iths.bookning.user;
+package org.iths.bookning.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

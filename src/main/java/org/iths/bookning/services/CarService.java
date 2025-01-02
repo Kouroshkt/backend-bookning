@@ -1,6 +1,8 @@
-package org.iths.bookning.car;
+package org.iths.bookning.services;
 
-import org.iths.bookning.carCategory.CategoryRepository;
+import org.iths.bookning.entities.Car;
+import org.iths.bookning.repositories.CarRepository;
+import org.iths.bookning.repositories.CategoryRepository;
 import org.springframework.stereotype.Service;
 
 @Service
