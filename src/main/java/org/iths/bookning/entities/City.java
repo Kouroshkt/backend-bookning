@@ -1,4 +1,4 @@
-package org.iths.bookning.user;
+package org.iths.bookning.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -9,17 +9,13 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserInformation {
+public class City {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
-    private String lastName;
-    @Column(unique = true)
-    private String email;
-    private String username;
-    private String password;
-    private String address;
+    @Column(nullable = false, unique = true) // Validering för namn
+    private String cityName;
+    private String carsAddress;
 
 }

@@ -1,11 +1,9 @@
-package org.iths.bookning.car;
+package org.iths.bookning.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.iths.bookning.carCategory.CarCategory;
-import org.iths.bookning.city.City;
 
 @Entity
 @Data
@@ -30,6 +28,9 @@ public class Car {
 
     @Column(nullable = false)
     private String image;
+
+    @Column(nullable = false)
+    private int price;
 
     @ManyToOne
     @JoinColumn(name = "car_category_id", nullable = false) // Koppling till CarCategory

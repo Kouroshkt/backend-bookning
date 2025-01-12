@@ -1,10 +1,9 @@
-package org.iths.bookning.carCategory;
+package org.iths.bookning.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.iths.bookning.city.City;
 
 
 @Entity

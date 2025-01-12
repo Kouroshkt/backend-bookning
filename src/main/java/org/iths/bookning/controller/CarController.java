@@ -1,6 +1,7 @@
-package org.iths.bookning.car;
+package org.iths.bookning.controller;
 
-import org.springframework.http.ResponseEntity;
+import org.iths.bookning.entities.Car;
+import org.iths.bookning.services.CarService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -19,11 +20,24 @@ public class CarController {
     }
 
     @GetMapping("/getcar")
-    public Iterable<Car> getCar(@RequestParam Long cityId, @RequestParam Long carCategoryId) {
+    public Iterable<Car> getCar(
+            @RequestParam Long cityId,
+            @RequestParam Long carCategoryId
+    ) {
         return carService.getCar(cityId, carCategoryId);
     }
     @GetMapping("/getallcar")
     public Iterable<Car> getAllCar() {
         return carService.allCar();
+    }
+
+    @GetMapping("/getcarbyDate")
+    public Iterable<Car> getCarByDate(
+            @RequestParam Long cityId,
+            @RequestParam Long carCategoryId,
+            @RequestParam String startDate,
+            @RequestParam String endDate
+    ){
+        return carService.getCarByDate(cityId,carCategoryId,startDate,endDate);
     }
 }

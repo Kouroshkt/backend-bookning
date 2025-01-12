@@ -1,5 +1,8 @@
-package org.iths.bookning.user;
+package org.iths.bookning.services;
 
+import org.iths.bookning.entities.UserInformation;
+import org.iths.bookning.repositories.UserRepository;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -10,9 +13,10 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public void addUser(UserInformation userInformation) {
-        userRepository.save(userInformation);
+    public UserInformation addUser(UserInformation userInformation) {
+        return userRepository.save(userInformation);
     }
+
 
     public Iterable<UserInformation> allUser() {
         return userRepository.findAll();
@@ -24,5 +28,9 @@ public class UserService {
 
     public UserInformation getUserByUsername(String username) {
         return userRepository.findByUsername(username);
+    }
+
+    public boolean findUserByEmail(String email) {
+        return userRepository.findByEmail(email) != null;
     }
 }

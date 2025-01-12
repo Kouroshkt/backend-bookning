@@ -1,5 +1,7 @@
-package org.iths.bookning.city;
+package org.iths.bookning.services;
 
+import org.iths.bookning.entities.City;
+import org.iths.bookning.repositories.CityRepository;
 import org.springframework.stereotype.Service;
 
 @Service
