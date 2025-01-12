@@ -20,11 +20,24 @@ public class CarController {
     }
 
     @GetMapping("/getcar")
-    public Iterable<Car> getCar(@RequestParam Long cityId, @RequestParam Long carCategoryId) {
+    public Iterable<Car> getCar(
+            @RequestParam Long cityId,
+            @RequestParam Long carCategoryId
+    ) {
         return carService.getCar(cityId, carCategoryId);
     }
     @GetMapping("/getallcar")
     public Iterable<Car> getAllCar() {
         return carService.allCar();
+    }
+
+    @GetMapping("/getcarbyDate")
+    public Iterable<Car> getCarByDate(
+            @RequestParam Long cityId,
+            @RequestParam Long carCategoryId,
+            @RequestParam String startDate,
+            @RequestParam String endDate
+    ){
+        return carService.getCarByDate(cityId,carCategoryId,startDate,endDate);
     }
 }

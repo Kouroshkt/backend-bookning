@@ -16,9 +16,6 @@ public class CarBookning {
     @OneToOne
     @JoinColumn(name = "car_id")
     private Car car;
-    @OneToOne
-    @JoinColumn(name = "user_information_id")
-    private UserInformation userInformation;
     private String startDate;
     private String endDate;
 

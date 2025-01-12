@@ -16,5 +16,6 @@ public class City {
 
     @Column(nullable = false, unique = true) // Validering för namn
     private String cityName;
+    private String carsAddress;
 
 }

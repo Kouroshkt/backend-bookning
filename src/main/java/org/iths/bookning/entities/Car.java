@@ -29,6 +29,9 @@ public class Car {
     @Column(nullable = false)
     private String image;
 
+    @Column(nullable = false)
+    private int price;
+
     @ManyToOne
     @JoinColumn(name = "car_category_id", nullable = false) // Koppling till CarCategory
     private CarCategory carCategory;
