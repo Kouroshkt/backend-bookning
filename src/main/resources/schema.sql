@@ -109,4 +109,4 @@ VALUES
 
 -- Fyller tabellen 'user_information' med exempeldata för användare
 INSERT INTO user_information (name, last_name, email, username, password, address)
-VALUES ('John', 'Doe', 'john.doe@example.com', 'admin', 'password', '123 Main St');
+VALUES ('John', 'Doe', 'john.doe@example.com', 'admin', '123456', '123 Main St');

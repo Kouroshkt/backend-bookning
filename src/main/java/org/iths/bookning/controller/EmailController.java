@@ -14,7 +14,7 @@ public class EmailController {
     private final EmailService emailService;
     private final NewsEmailsRepository newsEmailsRepository;
 
-    public EmailController(EmailService emailService, NewsEmailsRepository newsEmailsRepository, NewsEmailsRepository newsEmailsRepository1) {
+    public EmailController(EmailService emailService, NewsEmailsRepository newsEmailsRepository1) {
         this.emailService = emailService;
         this.newsEmailsRepository = newsEmailsRepository1;
     }
