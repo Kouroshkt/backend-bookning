@@ -15,7 +15,6 @@ public class CarBookningService {
         this.carBookningRepository = carBookningRepository;
     }
 
-
     public boolean checkDate(Long carId, String startDate, String endDate) {
         Iterable<CarBookning> listCarBookning = carBookningRepository.findByCarId(carId);
         LocalDate newStart;
@@ -33,5 +32,9 @@ public class CarBookningService {
                 return false;
         }
         return true;
+    }
+
+    public void addCarBookning(CarBookning carBookning) {
+        carBookningRepository.save(carBookning);
     }
 }

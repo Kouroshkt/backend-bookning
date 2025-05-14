@@ -1,10 +1,10 @@
 package org.iths.bookning.entities;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
-@Setter
-@Getter
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class EmailRequest {
     private String name;
     private String email;

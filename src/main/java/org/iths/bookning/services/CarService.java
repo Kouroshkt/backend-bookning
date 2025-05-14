@@ -37,4 +37,8 @@ public class CarService {
         }
         return newListCar;
     }
+
+    public Car getCarById(Long carId) {
+        return carRepository.findById(carId).orElse(null);
+    }
 }
