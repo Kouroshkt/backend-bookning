@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
 public class CarBookning {
     @Id
@@ -19,4 +18,9 @@ public class CarBookning {
     private String startDate;
     private String endDate;
 
+    public CarBookning(Car car, String startDate, String endDate) {
+        this.car = car;
+        this.startDate = startDate;
+        this.endDate = endDate;
+    }
 }
