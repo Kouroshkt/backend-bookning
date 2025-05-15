@@ -1,7 +1,9 @@
 package org.iths.bookning.services;
 
 import org.iths.bookning.entities.CarBookning;
+import org.iths.bookning.entities.UserInformation;
 import org.iths.bookning.repositories.CarBookningRepository;
+import org.iths.bookning.repositories.UserRepository;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -10,9 +12,11 @@ import java.time.format.DateTimeParseException;
 @Service
 public class CarBookningService {
     private final CarBookningRepository carBookningRepository;
+    private final UserService us;
 
-    public CarBookningService(CarBookningRepository carBookningRepository) {
+    public CarBookningService(CarBookningRepository carBookningRepository, UserService us) {
         this.carBookningRepository = carBookningRepository;
+        this.us = us;
     }
 
     public boolean checkDate(Long carId, String startDate, String endDate) {
@@ -36,5 +40,13 @@ public class CarBookningService {
 
     public void addCarBookning(CarBookning carBookning) {
         carBookningRepository.save(carBookning);
+    }
+
+    public Iterable<CarBookning> getCarByUser(Long userId) {
+        UserInformation user= us.getUserById(userId);
+        if (user != null) {
+            return carBookningRepository.findByUserInformation(user);
+        }
+        return null;
     }
 }
